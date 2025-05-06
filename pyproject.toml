@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gitack"
+version = "0.0.1"
+authors = [
+    { name="Sanchay Joshi (BeardedOwl1357)", email="sanchay.joshi2023@gmail.com" }
+]
+
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+dependencies = [
+    "markdown-it-py==3.0.0",
+    "mdurl==0.1.2",
+    "prettytable==3.16.0",
+    "prompt_toolkit==3.0.51",
+    "Pygments==2.19.1",
+    "PyYAML==6.0.2",
+    "questionary==2.1.0",
+    "rich==14.0.0",
+    "wcwidth==0.2.13"
+]
+
+keywords = ["git","check","cli"]
+
+# classifiers = [
+#   # How mature is this project? Common values are
+#   #   3 - Alpha
+#   #   4 - Beta
+#   #   5 - Production/Stable
+#   "Development Status :: 3 - Alpha",
+
+#   # Indicate who your project is intended for
+#   "Intended Audience :: Developers",
+#   "Topic :: Software Development :: Build Tools",
+
+#   # Specify the Python versions you support here.
+#   "Programming Language :: Python :: 3.10",
+# ]
+
+[project.scripts]
+gitack-cli = "gitack.main:main"
+
+[project.urls]
+# Homepage = "https://example.com"
+# Documentation = "https://readthedocs.org"
+Repository = "https://github.com/BeardedOwl1357/gitack.git"
+Issues = "https://github.com/BeardedOwl1357/gitack/issues"
+# Changelog = "https://github.com/me/spam/blob/master/CHANGELOG.md"

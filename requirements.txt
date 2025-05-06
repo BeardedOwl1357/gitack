@@ -1,0 +1,10 @@
+markdown-it-py==3.0.0
+mdurl==0.1.2
+prettytable==3.16.0
+prompt_toolkit==3.0.51
+Pygments==2.19.1
+python-dotenv==1.1.0
+PyYAML==6.0.2
+questionary==2.1.0
+rich==14.0.0
+wcwidth==0.2.13

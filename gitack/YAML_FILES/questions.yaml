@@ -1,0 +1,88 @@
+common:
+  backend:
+    questions:
+      - type: yesno
+        name : "Unit tests and coverage"
+        question: "Have you written unit tests?"
+        description: |
+          - Writing junits ensures that code gets tested in local
+          - Also, the coverage of code must be similar to develop
+          - Try to deliver junit in same branch as feature branch
+        reference: ""
+        expected: "Y"
+
+      - type: yesno
+        name : "Imports"
+        question: "Are there any imports where we are importing via wildcard (*) instead of class name?"
+        description: "Importing via wildcard can cause performance issues"
+        reference: ""
+        expected: "N"
+
+      - type: yesno
+        name : "Idempotent SQL"
+        question: "If you have any SQL changes, are they idempotent?"
+        description: | 
+          - To test idempotent processes, deploy first. 
+          - Then delete flyway migrations from table and redeploy
+        reference: ""
+        expected: "Y"
+
+      - type: yesno
+        name : "Testing on OKE Cluster"
+        question: "Have you tested your changes on testing cluster? (DP/INF)"
+        description: |
+          - Before the code is merged in develop, you must test in testing cluster to ensure no unexpected issues arise. 
+          - Minikube environment can lead to faulty results
+        reference: ""
+        expected: "Y"  
+
+  frontend:
+    questions:
+
+  devops:
+    questions:
+
+projects:
+  microservice-ecp-monitoring:
+    questions:
+      - type: yesno
+        name : "Minikube CICD deployment without tenants"
+        question: "Have you tested flyway changes on fresh deployment?"
+        description: |
+          - This allows us to test scenario for new clusters. 
+            - For example, if we were to create a new OKE cluster, the deployment will happen from scratch
+            - We must ensure that we are not generating any issues
+          - To test, execute the following commands
+          ```bash
+          ./undeploy.sh ;
+          ```
+        reference: ""
+        expected: "Y"
+
+      - type: yesno
+        name : "Dashboard API regression"
+        question: "If dashboard changes have been done, is there any API that has been affected?"
+        description: |
+          - To test this
+            - Create sample data for each portlet (edge might be an exception. Or just use a DB link)
+            - Open UI and check for both ECPAdmin and GBUAdmin
+        reference: ""
+        expected: "N"
+        errorMsg : "Check for regression in lower environments. It's difficult to fix on higher environments"
+
+      - type: yesno
+        name : "New tenant"
+        question: "If a new tenant were to be onboarded when feature branch is running, is the functionality as expected?"
+        description: |
+          - To test this
+            - Redeploy cicd. Onboard a tenant and deploy monitoring service
+            - Onboard a new tenant and check functionality
+        reference: ""
+        expected: "Y"
+        errorMsg : "It should work for a new tenant."
+
+  microservice-ecp-dashboard:
+    questions:
+
+  microservice-ecp-star:
+    questions:
