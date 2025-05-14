@@ -7,7 +7,7 @@
 
 
 > [!tip]
-> Demonstration of tool : https://www.youtube.com/watch?v=VlwZCaTqPZU
+> Demonstration of tool : <a href="https://www.youtube.com/watch?v=VlwZCaTqPZU" target="_blank"> https://www.youtube.com/watch?v=VlwZCaTqPZU </a>
 
 A sample of YAML file can be accessed from here : [questions.yaml](./gitack/YAML_FILES/questions.yaml). More info about YAML file is defined in [yaml](#yaml-file) section
 
