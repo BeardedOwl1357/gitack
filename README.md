@@ -5,6 +5,10 @@
   - common : Common can be subdivided into categories. This is used to indicate checks that are common to a "branch" of developers. For example, there are some checks that are common to backend developers, some are common to frontend developers etc. These are defined by `common` key in the YAML file 
   - project : They are project specific checks. It is possible that you are working on multiple projects and each project has its quirks / things to be checked. 
 
+
+> [!tip]
+> Demonstration of tool : https://www.youtube.com/watch?v=VlwZCaTqPZU
+
 A sample of YAML file can be accessed from here : [questions.yaml](./gitack/YAML_FILES/questions.yaml). More info about YAML file is defined in [yaml](#yaml-file) section
 
 ## Installation (TODO. Need to publish on pypi)
